@@ -7,6 +7,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.MaterialTheme
@@ -47,14 +48,15 @@ fun ContentBody(modifier: Modifier = Modifier) {
      * requires a Row or Column to be within a ColumnScope or a RowScope, respectively,
      * in order for the height/width to be calculated correctly.
      */
-    Column(modifier =  modifier) {
-        Row(modifier = modifier.weight(fill = false, weight = 0.5F)) {
+    Column(modifier =  modifier.fillMaxHeight()) {
+        Row(modifier = modifier.weight(weight = 0.5F)) {
             Column(
                 horizontalAlignment = Alignment.CenterHorizontally,
                 modifier = modifier
                     .background(colorResource(id = R.color.text_composable))
+                    .fillMaxSize()
                     .padding(16.dp)
-                    .weight(fill = false, weight = 0.5F),
+                    .weight(weight = 0.5F),
                 verticalArrangement = Arrangement.Center,
             ) {
                 Quadrant(
@@ -67,8 +69,9 @@ fun ContentBody(modifier: Modifier = Modifier) {
                 horizontalAlignment = Alignment.CenterHorizontally,
                 modifier = modifier
                     .background(colorResource(id = R.color.image_composable))
+                    .fillMaxSize()
                     .padding(16.dp)
-                    .weight(fill = false, weight = 0.5F),
+                    .weight(weight = 0.5F),
                 verticalArrangement = Arrangement.Center,
             ) {
                 Quadrant(
@@ -78,13 +81,14 @@ fun ContentBody(modifier: Modifier = Modifier) {
                 )
             }
         }
-        Row(modifier = modifier.weight(fill = false, weight = 0.5F)) {
+        Row(modifier = modifier.weight(weight = 0.5F)) {
             Column(
                 horizontalAlignment = Alignment.CenterHorizontally,
                 modifier = modifier
                     .background(colorResource(id = R.color.row_composable))
+                    .fillMaxSize()
                     .padding(16.dp)
-                    .weight(fill = false, weight = 0.5F),
+                    .weight(weight = 0.5F),
                 verticalArrangement = Arrangement.Center,
             ) {
                 Quadrant(
@@ -97,8 +101,9 @@ fun ContentBody(modifier: Modifier = Modifier) {
                 horizontalAlignment = Alignment.CenterHorizontally,
                 modifier = modifier
                     .background(colorResource(id = R.color.column_composable))
+                    .fillMaxSize()
                     .padding(16.dp)
-                    .weight(fill = false, weight = 0.5F),
+                    .weight(weight = 0.5F),
                 verticalArrangement = Arrangement.Center,
             ) {
                 Quadrant(
